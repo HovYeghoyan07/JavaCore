@@ -8,11 +8,11 @@ public class ForIfExamples {
             System.out.print(x);
         }
         System.out.println();
-        int b = 0;
+        int sum = 0;
         for (int a = 1; a <= 100; a++) {
-            b += a;
+            sum += a;
         }
-        System.out.println("2." + b);
+        System.out.println("2." + sum);
 
         System.out.print("3.");
         for (int x = 50; x > 1; x--) {
