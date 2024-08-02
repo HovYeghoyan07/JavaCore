@@ -1,7 +1,7 @@
-package homework;
+package homework.homework4;
 
 public class ArrayHomework {
-    public static void main(String[] args) {
+    void one(){
         int nums[] = {2, 5, 8, 7, 4, 6, 1, 9, 3, 6};
         int n = 6;
         int a = 0;
@@ -11,8 +11,8 @@ public class ArrayHomework {
             }
         }
         System.out.println(a);
-
-
+    }
+    void two(){
         int[] num = {6, 2, 8, 3, 9, 5, 7, 4, 1, 10};
 
 
@@ -26,6 +26,8 @@ public class ArrayHomework {
         }
         System.out.println();
 
+    }
+    void three(){
         int[] numss = {11, 4, 8, 2, 6, 7, 4, 1, 9, 4};
         int b = 0;
         int aa;
@@ -39,7 +41,8 @@ public class ArrayHomework {
         }
         System.out.println(b);
 
-
+    }
+    void four(){
         char[] chars = {'բ', 'ա', 'ր', 'և', 'ա', 'շ', 'խ', 'ա', 'ր', 'հ'};
         int c = 0;
 
@@ -62,7 +65,6 @@ public class ArrayHomework {
             }
         }
         System.out.println(c);
-
 
     }
 
