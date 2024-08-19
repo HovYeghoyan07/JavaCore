@@ -9,7 +9,7 @@ public class Stack {
     }
 
     void push(int item) {
-        if (tos == 9) {
+        if (tos == stck.length-1) {
             System.out.println("Cтeк заполнен.");
         } else {
             stck[++tos] = item;
