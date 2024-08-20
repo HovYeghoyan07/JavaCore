@@ -30,8 +30,11 @@ public class Stack {
         }
     }
 
+    public int getTopIndex() {
+        return tos;
+    }
+
     public boolean isEmpty() {
         return tos < 0;
     }
-
 }
