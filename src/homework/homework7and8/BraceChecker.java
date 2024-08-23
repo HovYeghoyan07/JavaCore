@@ -1,12 +1,9 @@
-package homework.homework7;
+package homework.homework7and8;
 
 public class BraceChecker {
     private Stack stack = new Stack();
     private String text;
 
-    public BraceChecker(String text) {
-        this.text = text;
-    }
 
     public String getText() {
         return text;
@@ -39,5 +36,9 @@ public class BraceChecker {
 
     private boolean isMatchingPair(char open, char close) {
         return (open == '(' && close == ')') || (open == '[' && close == ']') || (open == '{' && close == '}');
+    }
+    public void setText(String text) {
+        this.text = text;
+
     }
 }
