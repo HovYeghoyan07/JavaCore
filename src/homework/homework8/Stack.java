@@ -1,37 +1,31 @@
-package homework.homework7and8;
+package homework.homework8;
 
 public class Stack {
-    private char[] stck = new char[10];
+    private Brace[] stck = new Brace[10];
     private int tos;
 
     Stack() {
         tos = -1;
     }
 
-    public void push(char item) {
+    public void push(Brace item) {
         if (tos == stck.length - 1) {
             extend();
-        } else {
-            stck[++tos] = item;
         }
+        stck[++tos] = item;
     }
 
     private void extend() {
-        char[] tmp = new char[stck.length + 10];
+        Brace[] tmp = new Brace[stck.length + 10];
         System.arraycopy(stck, 0, tmp, 0, tos + 1);
         stck = tmp;
     }
 
-    public char pop() {
+    public Brace pop() {
         if (tos < 0) {
-            return '0';
-        } else {
-            return stck[tos--];
+            return null;
         }
-    }
-
-    public int getTopIndex() {
-        return tos;
+        return stck[tos--];
     }
 
     public boolean isEmpty() {
