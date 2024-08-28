@@ -1,4 +1,4 @@
-package homework.homework8;
+package homework.homework7i8;
 
 public class Stack {
     private Brace[] stck = new Brace[10];
