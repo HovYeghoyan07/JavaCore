@@ -40,7 +40,7 @@ public class BookStorage {
         return null;
     }
 
-    public void printBooksByPrice(double minPrice, int maxPrice) {
+    public void printBooksByPrice(double minPrice, double maxPrice) {
 
         for (int i = 0; i <= size; i++) {
             if (books[i].getPrice() >= minPrice && books[i].getPrice() <= maxPrice) {
