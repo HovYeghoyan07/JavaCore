@@ -7,14 +7,15 @@ public class Book {
     private String title;
     private String authorName;
     private double price;
+    private int quantity;
 
-    public Book(String id, String title, String authorName, double price) {
+    public Book(String id, String title, String authorName, double price, int quantity ) {
         this.id = id;
         this.title = title;
         this.authorName = authorName;
         this.price = price;
+        this.quantity = quantity;
     }
-    public Book(){}
 
     public String getId() {
         return id;
@@ -48,17 +49,12 @@ public class Book {
         this.price = price;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Book book = (Book) o;
-        return Double.compare(price, book.price) == 0 && Objects.equals(id, book.id) && Objects.equals(title, book.title) && Objects.equals(authorName, book.authorName);
+    public int getQuantity() {
+        return quantity;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, title, authorName, price);
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     @Override
@@ -68,6 +64,20 @@ public class Book {
                 ", title='" + title + '\'' +
                 ", authorName='" + authorName + '\'' +
                 ", price=" + price +
+                ", quantity=" + quantity +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return Double.compare(price, book.price) == 0 && quantity == book.quantity && Objects.equals(id, book.id) && Objects.equals(title, book.title) && Objects.equals(authorName, book.authorName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, authorName, price, quantity);
     }
 }
