@@ -1,7 +1,5 @@
 package homework.homework10Employee;
 
-import homework.homework9.Book;
-
 public class EmployeeStorage {
     private Employee[] employees = new Employee[10];
     private int size = -1;

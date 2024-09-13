@@ -1,9 +1,5 @@
 package homework.homework10Employee;
 
-import homework.homework9.Book;
-import homework.homework9.BookStorage;
-import homework.homework9.LibraryCommands;
-
 import java.util.Scanner;
 
 public class EmployeeDemo implements CompanyCommands {

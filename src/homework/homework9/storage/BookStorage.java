@@ -1,4 +1,7 @@
-package homework.homework9;
+package homework.homework9.storage;
+
+import homework.homework9.model.Author;
+import homework.homework9.model.Book;
 
 public class BookStorage {
     private Book[] books = new Book[10];
@@ -58,6 +61,14 @@ public class BookStorage {
                     }
                     size--;
                 }
+            }
+        }
+    }
+
+    public void searchByAuthor(Author author) {
+        for (int i = 0; i < size; i++) {
+            if (books[i].getAuthor().equals(author)){
+                System.out.println(books[i]);
             }
         }
     }
