@@ -1,4 +1,4 @@
-package homework.medicalCenter;
+package homework.medicalCenter.util;
 
 public interface MedicalCommands {
     String EXIT = "0";

@@ -3,6 +3,9 @@ package homework.medicalCenter.storage;
 import homework.medicalCenter.model.Doctor;
 import homework.medicalCenter.model.Patient;
 import homework.medicalCenter.model.Person;
+import homework.medicalCenter.model.Profession;
+
+import java.util.Date;
 
 
 public class MedicalStorage {
@@ -25,16 +28,6 @@ public class MedicalStorage {
         return null;
     }
 
-    public Patient getPatientById(String id) {
-        for (int i = 0; i < size; i++) {
-            if (persons[i] instanceof Patient) {
-                if (persons[i].getId().equals(id)) {
-                    return (Patient) persons[i];
-                }
-            }
-        }
-        return null;
-    }
 
     private void extend() {
         Person[] tmp = new Person[persons.length + 10];
@@ -45,14 +38,14 @@ public class MedicalStorage {
     public void searchDoctorByProfession(String profession) {
         for (int i = 0; i < size; i++) {
             if (persons[i] instanceof Doctor) {
-                if (((Doctor) persons[i]).getProfession().equals(profession)) {
+                if (((Doctor) persons[i]).getProfession().equals(Profession.valueOf(profession.toUpperCase()))) {
                     System.out.println((Doctor) persons[i]);
                 }
             }
         }
     }
 
-    public void printPatientsByDoctorId(String doctorId) {
+    public void searchPatientsByDoctor(String doctorId) {
         for (int i = 0; i < size; i++) {
             if (persons[i] instanceof Patient) {
                 if (((Patient) persons[i]).getDoctor().getId().equals(doctorId)) {
@@ -70,18 +63,20 @@ public class MedicalStorage {
         }
     }
 
-    public Doctor getDoctorByEmail(String email) {
-        if (email != null && email.isEmpty()) {
-            for (int i = 0; i < size; i++) {
-                if (persons[i] instanceof Doctor) {
-                    if (((Doctor) persons[i]).getEmail().equals(email)) {
-                        return (Doctor) persons[i];
-                    }
+    public Patient getPatientById(String id) {
+        for (int i = 0; i < size; i++) {
+            if (persons[i] instanceof Patient) {
+                if (persons[i].getId().equals(id)) {
+                    return (Patient) persons[i];
                 }
             }
         }
         return null;
     }
+
+
+
+
 
     public boolean deleteDoctorById(String id) {
         for (int i = 0; i < size; i++) {
@@ -97,22 +92,28 @@ public class MedicalStorage {
         return false;
     }
 
-    public int getDoctorsCount() {
-        int count = 0;
+
+
+    public void printAllDoctors() {
         for (int i = 0; i < size; i++) {
             if (persons[i] instanceof Doctor) {
-                count++;
-            }
-        }
-        return count;
-    }
-    public void printAllDoctors(){
-        for (int i = 0; i < size; i++) {
-            if (persons[i] instanceof Doctor){
                 System.out.println((Doctor) persons[i]);
             }
         }
     }
-
+    public boolean isTimeAvailable(Date date, Doctor doctor) {
+        for (int i = 0; i < size; i++) {
+            if (persons[i] instanceof Patient) {
+                Patient patient = (Patient) persons[i];
+                if (patient.getDoctor().getId().equals(doctor.getId())) {
+                    long timeDifference = Math.abs(patient.getRegisterDateTime().getTime() - date.getTime());
+                    if (timeDifference < 30 * 60 * 1000) { // Разница меньше 30 минут
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
 
 }
