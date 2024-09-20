@@ -1,15 +1,14 @@
-package homework.medicalCenter;
+package homework.medicalCenter11;
 
 
 
 
-import homework.medicalCenter.model.Doctor;
-import homework.medicalCenter.model.Patient;
-import homework.medicalCenter.util.DateUtil;
-import homework.medicalCenter.storage.MedicalStorage;
-import homework.medicalCenter.util.MedicalCommands;
-import homework.medicalCenter.TimeNotAllowedException;
-import homework.medicalCenter.model.Profession;
+import homework.medicalCenter11.model.Doctor;
+import homework.medicalCenter11.model.Patient;
+import homework.medicalCenter11.util.DateUtil;
+import homework.medicalCenter11.storage.MedicalStorage;
+import homework.medicalCenter11.util.MedicalCommands;
+import homework.medicalCenter11.model.Profession;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.Scanner;

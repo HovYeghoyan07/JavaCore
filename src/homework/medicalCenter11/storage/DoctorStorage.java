@@ -1,7 +1,5 @@
-package homework.medicalCenter.storage;
+package homework.medicalCenter11.storage;
 
-
-import homework.medicalCenter.model.Doctor;
 
 //public class DoctorStorage {
 //    private Doctor[] doctors = new Doctor[10];

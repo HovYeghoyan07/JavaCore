@@ -1,4 +1,4 @@
-package homework.medicalCenter.model;
+package homework.medicalCenter11.model;
 
 public enum Profession {
     GENERAL_PRACTITIONER,

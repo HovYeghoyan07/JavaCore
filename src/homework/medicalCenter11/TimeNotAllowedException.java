@@ -1,4 +1,4 @@
-package homework.medicalCenter;
+package homework.medicalCenter11;
 
 public class TimeNotAllowedException extends Exception {
     public TimeNotAllowedException() {
